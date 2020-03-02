@@ -63,6 +63,23 @@ const mezclarArray = (array) => {
 }
 
 
+/// Creo una función para crear el tablero
+const creoTablero = elementos => {
+    let tablero = elementos.slice();
+
+    // mezclo las fichas
+    tablero = mezclarArray(tablero);
+    // las convierto en array2D
+    tablero = crearArray2D(tablero);
+
+    return tablero
+}
+
+
+
+
+
+
 // Creo función para mostrar un tablero en base a un array 2D
 const imprimirArray2D = (array2D) => {
 
@@ -249,12 +266,7 @@ let mensajeAccion = `
 while (juegoSigue) {
 
     // creo la variable con las fichas
-    let tablero = elementos.slice();
-
-    // mezclo las fichas
-    tablero = mezclarArray(tablero);
-    // las convierto en array2D
-    tablero = crearArray2D(tablero);
+    let tablero = creoTablero(elementos);
 
     let terminarJuego = false; // comienzo juego
 
