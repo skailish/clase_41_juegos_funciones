@@ -165,7 +165,7 @@ let juegoSigue = true;
 ////======= JUEGO ========////
 //==========================//
 
-// Inciamos bucle
+// Inciamos bucle|||| CONVERTIRLA A FUNCION
 while (juegoSigue) {
 
     // pido al usuario que defina cantidad de Elementos
@@ -188,6 +188,7 @@ while (juegoSigue) {
 
     let terminarJuego = false; // comienzo juego
 
+    //// UNA PARTIDA |||| CONVERTIRLA A FUNCION
     while (!terminarJuego) {
 
         // actualizar el tablero oculto que se mostrará al jugador
@@ -197,7 +198,7 @@ while (juegoSigue) {
         let coordenadas = [];
         coordenadas.push(Number(prompt(tableroMuestroAJugador + "\nIngrese la posicion del primer elemento")) - 1); // posicion primer elemento
 
-        // Chequeo si es válida la coordenada
+        // Chequeo si es válida la coordenada |||| CONVERTIRLA A FUNCION
         while (coordenadas[0] > cantidadElementos || !(listaElementosOcultos[coordenadas[0]] === "📦")) {
             coordenadas[0] = Number(prompt(tableroMuestroAJugador + "\nERROR\nIngrese la posicion CORRECTA del primer elemento")) - 1; // posicion primer elemento
         }
@@ -208,7 +209,7 @@ while (juegoSigue) {
 
         coordenadas.push(Number(prompt(tableroMuestroAJugador + "\nIngrese la posicion del segundo elemento")) - 1); // posicion segundo elemento
 
-        // Chequeo si son válidas las coordenadas
+        // Chequeo si son válidas las coordenadas|||| CONVERTIRLA A FUNCION
         while ((coordenadas[0] === coordenadas[1]) || coordenadas[1] > cantidadElementos || !(listaElementosOcultos[coordenadas[1]] === "📦")) {
             coordenadas[1] = Number(prompt(tableroMuestroAJugador + "\nERROR\nIngrese la posicion CORRECTA del segundo elemento")) - 1; // posicion segundo elemento
         }
@@ -243,13 +244,13 @@ while (juegoSigue) {
         }
     }
 
-    // Puede ser que las vueltas sean 0, pero que haya acertado en el último intento.. por eso VERIFICO
+    // Verificar si ganó la partida |||| CONVERTIRLA A FUNCION
     const resultado = listaElementosOcultos.includes("📦") ? "Perdió" : "Ganó";
 
     // Actualizo el historial Global de partidas
     historialGlobal += obtenerHistorialGlobal(resultado, intentos, contadorIntentos, numeroPartida, cantidadElementos);
 
-    // Mensaje para la jugadora con toda la info y preguntar si quiere seguir jugando
+    // Mensaje para la jugadora con toda la info y preguntar si quiere seguir jugando |||| CONVERTIRLA A FUNCION
     juegoSigue = confirm(`${resultado} esta partida.\n${historialGlobal}
     Desea seguir jugando?\nEl último tablero en juego:\n${mostrarArrayFormatoTablero(listaElementosDelJuego)}`);
 
