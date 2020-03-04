@@ -171,7 +171,7 @@ while (juegoSigue) {
     // pido al usuario que defina cantidad de Elementos
     let cantidadElementos = Number(prompt("Defina el tamaño del tablero, números pares entre 8 y 32 elementos"));
 
-    // Chequeo si es válido el tamaño ingresado
+    // Chequeo si es válido el tamaño ingresado|||| CONVERTIRLA A FUNCION
     while (!((cantidadElementos >= 8 || cantidadElementos <= 32) && (cantidadElementos % 2) === 0)) {
         cantidadElementos = Number(prompt("Ingreso inválido.\nDefina el tamaño del tablero, números pares entre 8 y 32 elementos"));
     }
